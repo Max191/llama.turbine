@@ -30,7 +30,7 @@ parser.add_argument(
 parser.add_argument(
     "--hf_model_path",
     type=str,
-    default="openlm-research/open_llama_3b",
+    default="meta-llama/Llama-2-7b-chat-hf",
     help="path to the hf model. Needed for tokenizer right now",
 )
 parser.add_argument(
@@ -83,7 +83,7 @@ class SharkLLM(object):
             while self.format_out(results) != 2:
                 results = self.model["run_forward"](results)
                 # uncomment to see tokens as they are emitted
-                # print(f"turbine: {tokenizer.decode(self.format_out(results))}")
+                print(f"turbine: {tokenizer.decode(self.format_out(results))}")
                 turbine_results.append(self.format_out(results))
             e = time.time()
             decoded_tokens = len(turbine_results)

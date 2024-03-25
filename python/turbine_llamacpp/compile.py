@@ -182,7 +182,7 @@ def create_direct_predict_internal_kv_module(
 
         mm_group_quant.MMGroupQuantRewriterPass(
             CompiledModule.get_mlir_module(inst).operation,
-            group_size=32,
+            group_size=128,
             param_names=quantized_param_names["Q4_1"],
         ).run()
     module_str = str(CompiledModule.get_mlir_module(inst))
