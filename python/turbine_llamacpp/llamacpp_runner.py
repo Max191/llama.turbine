@@ -30,7 +30,7 @@ parser.add_argument(
 parser.add_argument(
     "--hf_model_path",
     type=str,
-    default="meta-llama/Llama-2-7b-chat-hf",
+    default="llama2_tokenizer",
     help="path to the hf model. Needed for tokenizer right now",
 )
 parser.add_argument(
